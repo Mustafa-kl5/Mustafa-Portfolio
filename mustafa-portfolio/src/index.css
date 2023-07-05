@@ -1,0 +1,7 @@
+@font-face {
+  font-family: Belanosima;
+  src: url("./assets/fonts/Belanosima-SemiBold.ttf");
+}
+* {
+  font-family: "Belanosima";
+}

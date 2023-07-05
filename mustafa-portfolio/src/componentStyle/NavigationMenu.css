@@ -1,0 +1,91 @@
+/*mobile*/
+.menu-holder {
+  position: absolute;
+  top: 0.7rem;
+  left: 0.7rem;
+}
+.toggle-button {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: rgba(255, 254, 254, 0.2);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+.burger-line {
+  width: 1.5rem;
+  border-bottom: 0.2rem solid #000000;
+}
+.menuItem-Holder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(50% - 0.8rem);
+  height: 100vh;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  gap: 1rem;
+  padding-left: 0.8rem;
+}
+.menuWord-closeMenu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.menuWord {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.closeMenu {
+  background-image: url("../assets/close.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+/*tablet*/
+@media (min-width: 480px) {
+  .menuItem-Holder {
+    width: calc(15rem - 1.5rem);
+    gap: 1rem;
+    padding-left: 1.5rem;
+  }
+  .menuWord {
+    font-size: 1.6rem;
+  }
+  .closeMenu {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}
+/*desktop*/
+@media (min-width: 1280px) {
+  .menuItem-Holder {
+    width: calc(20rem - 2rem);
+    gap: 1.5rem;
+    padding-left: 2rem;
+  }
+  .menuWord {
+    font-size: 1.8rem;
+  }
+  .closeMenu {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+}
