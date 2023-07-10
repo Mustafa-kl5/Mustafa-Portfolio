@@ -2,6 +2,15 @@
   margin: 0px;
   padding: 0px;
 }
+*::-webkit-scrollbar {
+  width: 0rem;
+  background: #000000c0;
+  border-radius: 0rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: green;
+}
 .app {
   background-image: linear-gradient(
     to right top,

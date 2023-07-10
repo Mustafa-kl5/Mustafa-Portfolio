@@ -1,0 +1,55 @@
+.project-info-main-holder {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 30;
+}
+.project-info-holder {
+  width: calc(100% - 1rem);
+  height: calc(85% - 1rem);
+  background-color: white;
+  border-radius: 0.5rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1rem;
+}
+.project-info-name-close {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.project-info-name {
+  font-size: 3.5vh;
+}
+.project-info-close {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url("../assets/close.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/*tablet*/
+@media (min-width: 480px) {
+  .project-info-close {
+    width: 2rem;
+    height: 2rem;
+  }
+} /*desktop*/
+@media (min-width: 1280px) {
+  .project-info-close {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+}

@@ -3,18 +3,19 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  height: calc(100vh - 3.2rem);
 }
 
 .home-image {
   object-fit: contain;
   animation: floatingAnimation 4s ease-in-out infinite;
   width: calc(100vw - 2rem);
-  height: calc(calc(100vh - 2rem) / 2);
+  height: calc(calc(100vh - 5.2rem) / 2);
 }
 
 .home-introduction {
   width: calc(100vw - 2rem);
-  height: calc(calc(100vh - 2rem) / 2);
+  height: calc(calc(100vh - 5.2rem) / 2);
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -42,6 +43,23 @@
   padding: 0.5rem 1rem 0.5rem 1rem;
   border-radius: 0.5rem;
   font-size: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.download-icon {
+  width: 0rem;
+  height: 0rem;
+  background-image: url("../assets/downloading.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  transition: all 0.3s ease-in-out;
+}
+
+.cvDownload-button:hover > .download-icon {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 .github-word-logo {
   display: flex;
@@ -70,12 +88,12 @@
   }
   .home-image {
     width: calc(calc(100vw - 2rem) / 2);
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 5.2rem);
   }
 
   .home-introduction {
     width: calc(calc(100vw - 2rem) / 2);
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 5.2rem);
     justify-content: center;
   }
   .name {
@@ -108,24 +126,24 @@
   }
   .home-image {
     width: calc(calc(100vw - 2rem) / 2);
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 5.2rem);
   }
 
   .home-introduction {
     width: calc(calc(100vw - 2rem) / 2);
-    height: calc(100vh - 2rem);
+    height: calc(100vh - 5.2rem);
   }
   .name {
-    font-size: 3.3vw;
+    font-size: 3vw;
   }
   .name-span {
-    font-size: 2.8vw;
+    font-size: 2.5vw;
   }
   .intro-section {
-    font-size: 1.8vw;
+    font-size: 1.5vw;
   }
   .cvDownload-button {
-    font-size: 1.8vw;
+    font-size: 1.5vw;
   }
   .github-word-logo {
     padding-top: 0.5vw;
@@ -135,7 +153,7 @@
     height: 2rem;
   }
   .github-word {
-    font-size: 1.8vw;
+    font-size: 1.5vw;
   }
 }
 

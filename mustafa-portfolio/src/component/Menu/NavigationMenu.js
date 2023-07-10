@@ -29,7 +29,7 @@ export default function NavigationMenu(props) {
 
   return (
     <>
-      <div className="menu-holder animate__animated animate__fadeInLeft ">
+      <div className="menu-holder ">
         <div className="toggle-button">
           <div
             className="burger"

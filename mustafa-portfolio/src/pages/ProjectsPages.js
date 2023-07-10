@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import ContentHolder from "../component/ContentHolder";
 import NavigationMenu from "../component/Menu/NavigationMenu";
 import MainLayout from "../UI/MainLayout";
-export default function ProjectsPages() {
+import ProjectHolder from "../component/project/ProjectHolder";
+export default function ProjectsPage() {
   const [exitsAnimation, setExitsAnimation] = useState(false);
 
   const exitsAnimationControl = () => {
@@ -20,7 +21,7 @@ export default function ProjectsPages() {
     <>
       <MainLayout />
       <ContentHolder exitsAnimation={exitsAnimation}>
-        <div></div>
+        <ProjectHolder />
       </ContentHolder>
       <NavigationMenu exitsRouteAnimation={exitsAnimationControl} />
     </>
