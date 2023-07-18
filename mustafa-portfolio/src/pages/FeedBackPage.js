@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ContentHolder from "../component/ContentHolder";
 import NavigationMenu from "../component/Menu/NavigationMenu";
 import MainLayout from "../UI/MainLayout";
+import FeedbackHolder from "../component/feedback/FeedbackHolder";
 export default function FeedBackPage() {
   const [exitsAnimation, setExitsAnimation] = useState(false);
 
@@ -20,7 +21,7 @@ export default function FeedBackPage() {
     <>
       <MainLayout />
       <ContentHolder exitsAnimation={exitsAnimation}>
-        <div></div>
+        <FeedbackHolder />
       </ContentHolder>
       <NavigationMenu exitsRouteAnimation={exitsAnimationControl} />
     </>

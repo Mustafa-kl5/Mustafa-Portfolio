@@ -1,0 +1,68 @@
+.feedback-holder {
+  width: calc(100vw - 1rem);
+  padding-left: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.feedback-holder-intro {
+  color: white;
+  font-size: 2.2vh;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+}
+.feedback-holder-word {
+  font-size: 4vh;
+  color: white;
+  padding-left: 0.5rem;
+}
+.feedback-card-holder {
+  padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin-bottom: 1rem;
+  width: calc(100vw - 3rem);
+  height: 100%;
+  background-color: unset;
+  border-radius: 0.5rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  word-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+/*tablet*/
+@media (min-width: 480px) {
+  .feedback-holder-word {
+    font-size: 3.5vw;
+  }
+
+  .feedback-holder-intro {
+    color: white;
+    font-size: 2.7vw;
+  }
+} /*desktop*/
+@media (min-width: 1280px) {
+  .feedback-holder-word {
+    font-size: 3.5vw;
+  }
+  .feedback-card-holder {
+  }
+  .feedback-holder-intro {
+    color: white;
+    font-size: 1.5vw;
+    width: 70%;
+  }
+}
+
+.feedback-card-holder::-webkit-scrollbar {
+  width: 0.2rem;
+  background: #000000c0;
+  border-radius: 1rem;
+}
+
+.feedback-card-holder::-webkit-scrollbar-thumb {
+  background: green;
+}

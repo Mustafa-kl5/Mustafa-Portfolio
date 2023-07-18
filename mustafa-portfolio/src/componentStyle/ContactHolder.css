@@ -1,0 +1,137 @@
+.contact-image-introduction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(100vh - 3.2rem);
+}
+
+.contact-image {
+  object-fit: contain;
+  animation: floatingAnimation 4s ease-in-out infinite;
+  width: calc(100vw - 2rem);
+  height: calc(calc(100vh - 5.2rem) / 2);
+}
+
+.contact-introduction {
+  width: calc(100vw - 2rem);
+  height: calc(calc(100vh - 5.2rem) / 2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 1.5vh;
+}
+.contact-word {
+  font-size: 4vh;
+  color: white;
+  padding-left: 1rem;
+}
+.contact-word-span {
+  color: green;
+  font-size: 3.5vh;
+}
+.contact-introduction-paragraph {
+  font-size: 2.3vh;
+  color: white;
+}
+.contact-intro-section {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 2.3vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.link-article {
+  color: green;
+}
+.contact-icons-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.contact-icon {
+  background-image: url("../assets/github.png");
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.contact-icon:nth-child(2) {
+  background-image: url("../assets/icons8-linkedin-50.png");
+}
+/*tablet*/
+@media (min-width: 480px) {
+  .contact-image-introduction {
+    flex-direction: row;
+  }
+  .contact-image {
+    width: calc(calc(100vw - 2rem) / 2);
+    height: calc(100vh - 5.2rem);
+  }
+
+  .contact-introduction {
+    width: calc(calc(100vw - 2rem) / 2);
+    height: calc(100vh - 5.2rem);
+    justify-content: center;
+  }
+  .contact-word {
+    font-size: 4vw;
+  }
+  .contact-word-span {
+    font-size: 3.5vw;
+  }
+  .contact-intro-section {
+    font-size: 2vw;
+  }
+  .contact-introduction-paragraph {
+    font-size: 2vw;
+  }
+}
+/*desktop*/
+@media (min-width: 1280px) {
+  .contact-image-introduction {
+    flex-direction: row;
+  }
+  .contact-image {
+    width: calc(calc(100vw - 2rem) / 2);
+    height: calc(100vh - 5.2rem);
+  }
+
+  .contact-introduction {
+    width: calc(calc(100vw - 2rem) / 2);
+    height: calc(100vh - 5.2rem);
+  }
+  .contact-word {
+    font-size: 3vw;
+  }
+  .contact-word-span {
+    font-size: 2.5vw;
+  }
+  .contact-intro-section {
+    font-size: 1.5vw;
+  }
+  .contact-introduction-paragraph {
+    font-size: 1.5vw;
+  }
+}
+
+@keyframes floatingAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 0.5rem);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}

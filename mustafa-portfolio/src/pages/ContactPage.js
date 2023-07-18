@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ContentHolder from "../component/ContentHolder";
 import NavigationMenu from "../component/Menu/NavigationMenu";
 import MainLayout from "../UI/MainLayout";
+import ContactHolder from "../component/contact/ContactHolder";
 export default function ContactPage() {
   const [exitsAnimation, setExitsAnimation] = useState(false);
 
@@ -20,7 +21,7 @@ export default function ContactPage() {
     <>
       <MainLayout />
       <ContentHolder exitsAnimation={exitsAnimation}>
-        <div></div>
+        <ContactHolder />
       </ContentHolder>
       <NavigationMenu exitsRouteAnimation={exitsAnimationControl} />
     </>
