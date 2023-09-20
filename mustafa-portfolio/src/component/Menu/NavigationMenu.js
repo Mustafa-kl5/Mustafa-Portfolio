@@ -29,14 +29,14 @@ export default function NavigationMenu(props) {
 
   return (
     <>
-      <div className="menu-holder ">
+      <div
+        className="menu-holder "
+        onClick={() => {
+          setShowMenu(!showMenu);
+        }}
+      >
         <div className="toggle-button">
-          <div
-            className="burger"
-            onClick={() => {
-              setShowMenu(!showMenu);
-            }}
-          >
+          <div className="burger">
             <div className="burger-line"></div>
             <div className="burger-line"></div>
             <div className="burger-line"></div>

@@ -1,0 +1,16 @@
+.no-data-holder {
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.no-data-message {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+.no-data-image {
+  width: 100%;
+  object-fit: contain;
+}

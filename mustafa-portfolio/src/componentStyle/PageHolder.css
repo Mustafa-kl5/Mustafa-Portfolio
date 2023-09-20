@@ -1,0 +1,51 @@
+.page-holder {
+  width: calc(100vw - 1rem);
+  padding-left: 1rem;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.pageTitle {
+  font-size: 4vh;
+  color: white;
+  padding-left: 0.5rem;
+}
+
+.page-paragraph {
+  color: white;
+  font-size: 2.3vh;
+  padding-right: 1rem;
+  padding-left: 0.5rem;
+}
+/*tablet*/
+@media (min-width: 480px) {
+  .pageTitle {
+    font-size: 4.5vw;
+  }
+  .page-paragraph {
+    font-size: 2.5vw;
+  }
+}
+@media (min-width: 760px) {
+  .pageTitle {
+    font-size: 4vw;
+  }
+  .page-paragraph {
+    font-size: 2vw;
+    width: 70%;
+  }
+}
+
+/*desktop*/
+@media (min-width: 1280px) {
+  .pageTitle {
+    font-size: 3.5vw;
+  }
+
+  .page-paragraph {
+    font-size: 1.5vw;
+  }
+}

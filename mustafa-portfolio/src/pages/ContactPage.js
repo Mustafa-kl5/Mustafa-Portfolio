@@ -1,28 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ContentHolder from "../component/ContentHolder";
 import NavigationMenu from "../component/Menu/NavigationMenu";
 import MainLayout from "../UI/MainLayout";
 import ContactHolder from "../component/contact/ContactHolder";
+import useGet from "../hooks/useGet";
+import useAnimate from "../hooks/useAnimate";
+import { getUserId } from "../Helper/getUserId";
+import LoadingProgress from "../component/LoadingProgress";
 export default function ContactPage() {
-  const [exitsAnimation, setExitsAnimation] = useState(false);
+  const { data, isLoading } = useGet(
+    `/api/v1/data/getContactData/:${getUserId()}`
+  );
+  const { exitsAnimationControl, exitsAnimation } = useAnimate();
 
-  const exitsAnimationControl = () => {
-    setTimeout(() => {
-      setExitsAnimation(true);
-    }, 1000);
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      setExitsAnimation(false);
-    }, 2000);
-  }, [exitsAnimation]);
   return (
     <>
       <MainLayout />
-      <ContentHolder exitsAnimation={exitsAnimation}>
-        <ContactHolder />
-      </ContentHolder>
+      {isLoading ? (
+        <LoadingProgress />
+      ) : (
+        <ContentHolder exitsAnimation={exitsAnimation}>
+          <ContactHolder data={data} />
+        </ContentHolder>
+      )}
       <NavigationMenu exitsRouteAnimation={exitsAnimationControl} />
     </>
   );

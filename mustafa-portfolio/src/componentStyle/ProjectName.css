@@ -1,0 +1,43 @@
+.project-card-name {
+  position: relative;
+  font-size: 2vh;
+  color: white;
+  align-self: center;
+  padding: 0.8rem 0;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-container {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.28);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  transition: all 0.5s ease-in-out;
+}
+.more-button {
+  border: 0.2rem solid rgb(246, 248, 246);
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.5rem;
+  background: rgba(0, 0, 0, 0.816);
+  color: white;
+  font-weight: bold;
+  visibility: hidden;
+  transition: visibility 0.1s 0.1s ease-in-out;
+}
+
+.card:hover .more-container {
+  width: 100%;
+}
+.card:hover .more-button {
+  visibility: visible;
+}

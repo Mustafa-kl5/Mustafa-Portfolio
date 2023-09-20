@@ -1,28 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ContentHolder from "../component/ContentHolder";
 import NavigationMenu from "../component/Menu/NavigationMenu";
 import MainLayout from "../UI/MainLayout";
 import FeedbackHolder from "../component/feedback/FeedbackHolder";
+import { getUserId } from "../Helper/getUserId";
+import LoadingProgress from "../component/LoadingProgress";
+import useGet from "../hooks/useGet";
+import useAnimate from "../hooks/useAnimate";
 export default function FeedBackPage() {
-  const [exitsAnimation, setExitsAnimation] = useState(false);
+  const { data, isLoading } = useGet(
+    `/api/v1/data/getFeedBackData/:${getUserId()}`
+  );
 
-  const exitsAnimationControl = () => {
-    setTimeout(() => {
-      setExitsAnimation(true);
-    }, 1000);
-  };
-
-  useEffect(() => {
-    setTimeout(() => {
-      setExitsAnimation(false);
-    }, 1000);
-  }, [exitsAnimation]);
+  const { exitsAnimationControl, exitsAnimation } = useAnimate();
   return (
     <>
       <MainLayout />
-      <ContentHolder exitsAnimation={exitsAnimation}>
-        <FeedbackHolder />
-      </ContentHolder>
+      {isLoading ? (
+        <LoadingProgress />
+      ) : (
+        <ContentHolder exitsAnimation={exitsAnimation}>
+          <FeedbackHolder data={data} />
+        </ContentHolder>
+      )}
+
       <NavigationMenu exitsRouteAnimation={exitsAnimationControl} />
     </>
   );

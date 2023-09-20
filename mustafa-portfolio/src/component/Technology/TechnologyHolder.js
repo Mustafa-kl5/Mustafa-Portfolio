@@ -1,44 +1,37 @@
-import React, { useEffect, useRef } from "react";
-import "../../componentStyle/TechnologyHolder.css";
-import TechnologyCard from "./TechnologyCard";
+import React from "react";
+import TechnologyCard from "./TechnologyInformation";
+import NoDataFound from "../NoDataFound";
+import CardHolder from "../../UI/CardHolder";
+import PageHolder from "../../UI/PageHolder";
+import Card from "../../UI/Card";
+import TechnologyInformation from "./TechnologyInformation";
 
-export default function TechnologyHolder() {
-  const contentHolderRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (contentHolderRef.current) {
-        contentHolderRef.current.style.height = `calc(${window.innerHeight}px - 4.2rem )`;
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+export default function TechnologyHolder(props) {
   return (
-    <div className="technology-holder" ref={contentHolderRef}>
-      <div className="technology-holder-word">
-        Technology <span className="word-color">:-</span>
-      </div>
-      <div className="technology-holder-paragraph">
-        My portfolio reflects a harmonious blend of technology and creativity.
-        Through innovative tools, I create captivating designs and interactive
-        experiences that resonate with viewers. Continuously evolving, my
-        portfolio stays at the forefront of digital trends.
-      </div>
-      <div className="technology-card-holder">
-        <TechnologyCard /> <TechnologyCard /> <TechnologyCard />
-        <TechnologyCard /> <TechnologyCard /> <TechnologyCard />{" "}
-        <TechnologyCard />
-        <TechnologyCard /> <TechnologyCard /> <TechnologyCard />{" "}
-        <TechnologyCard />
-        <TechnologyCard /> <TechnologyCard /> <TechnologyCard />{" "}
-        <TechnologyCard />
-        <TechnologyCard />
-      </div>
-    </div>
+    <PageHolder
+      pageParagraph="My portfolio reflects a harmonious blend of technology and creativity.
+      Through innovative tools, I create captivating designs and interactive
+      experiences that resonate with viewers. Continuously evolving, my
+      portfolio stays at the forefront of digital trends."
+      pageTitle="Technology"
+    >
+      <CardHolder>
+        {props.technologyData.userTechnology.length === 0 ? (
+          <NoDataFound message="No Technology Found" />
+        ) : (
+          props.technologyData.userTechnology.map((tech, index) => {
+            return (
+              <Card key={index} cardImage={tech.technologyImage}>
+                <TechnologyInformation
+                  techName={tech.technologyName}
+                  techLevel={tech.proficiencyLevel}
+                  techExperience={tech.yearsOfExperience}
+                />
+              </Card>
+            );
+          })
+        )}
+      </CardHolder>
+    </PageHolder>
   );
 }

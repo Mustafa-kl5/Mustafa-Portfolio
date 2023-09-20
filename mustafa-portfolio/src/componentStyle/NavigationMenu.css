@@ -1,29 +1,26 @@
 /*mobile*/
 .menu-holder {
   position: absolute;
-  top: 0.7rem;
-  left: 0.7rem;
+  top: 3%;
+  left: 1.5rem;
+  cursor: pointer;
 }
 .toggle-button {
-  width: 2.5rem;
-  height: 2.5rem;
   background-color: rgba(255, 254, 254, 0.2);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 0.5rem;
 }
 .burger {
+  width: 2rem;
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 0.3rem;
-  cursor: pointer;
+  gap: 0.2rem;
 }
 .burger-line {
-  width: 1.5rem;
-  border-bottom: 0.2rem solid #000000;
+  width: 1.2rem;
+  border-bottom: 0.2rem solid black;
 }
 .menuItem-Holder {
   position: absolute;

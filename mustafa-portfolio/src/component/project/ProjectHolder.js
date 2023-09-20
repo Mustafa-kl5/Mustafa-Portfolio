@@ -1,38 +1,33 @@
-import React, { useEffect, useRef } from "react";
-import "../../componentStyle/ProjectHolder.css";
-import ProjectCard from "./ProjectCard";
+import React from "react";
+import ProjectName from "./ProjectName";
+import NoDataFound from "../NoDataFound";
+import CardHolder from "../../UI/CardHolder";
+import PageHolder from "../../UI/PageHolder";
+import Card from "../../UI/Card";
 
-export default function ProjectHolder() {
-  const contentHolderRef = useRef(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (contentHolderRef.current) {
-        contentHolderRef.current.style.height = `calc(${window.innerHeight}px - 4.2rem )`;
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+export default function ProjectHolder(props) {
   return (
-    <div className="project-holder" ref={contentHolderRef}>
-      <div className="project-holder-word">
-        Projects <span className="word-color">:-</span>
-      </div>
-      <div className="project-card-holder">
-        <ProjectCard />
-        {/* <ProjectCard /> <ProjectCard />
-        <ProjectCard />
-        <ProjectCard /> <ProjectCard /> <ProjectCard /> <ProjectCard />{" "}
-        <ProjectCard /> <ProjectCard /> <ProjectCard /> <ProjectCard />{" "}
-        <ProjectCard /> <ProjectCard /> <ProjectCard /> <ProjectCard />{" "}
-        <ProjectCard /> <ProjectCard /> <ProjectCard /> <ProjectCard />{" "}
-        <ProjectCard /> <ProjectCard /> <ProjectCard /> <ProjectCard /> */}
-      </div>
-    </div>
+    <PageHolder
+      pageParagraph="Here, you'll find a curated selection of my work, 
+      each project representing a unique journey and 
+      a testament to my skills and expertise.
+       As you explore these projects, you'll gain insight into my creative process,
+        problem-solving abilities, and dedication to deliver outstanding results."
+      pageTitle="Projects"
+    >
+      <CardHolder>
+        {props.data.projects.length === 0 ? (
+          <NoDataFound message="No Project Found." />
+        ) : (
+          props.data.projects.map((project, index) => {
+            return (
+              <Card cardImage={project.images[0].fileName} key={index}>
+                <ProjectName cardData={project} />
+              </Card>
+            );
+          })
+        )}
+      </CardHolder>
+    </PageHolder>
   );
 }

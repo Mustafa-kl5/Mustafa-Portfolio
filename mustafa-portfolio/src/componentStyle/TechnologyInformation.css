@@ -1,0 +1,18 @@
+.technology-card-name-proficiency-level {
+  font-size: 2vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: white;
+  padding: 1rem 0.5rem;
+}
+
+/*tablet*/
+@media (min-width: 480px) {
+}
+
+/*desktop*/
+@media (min-width: 1280px) {
+}
