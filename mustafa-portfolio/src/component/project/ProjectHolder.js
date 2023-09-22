@@ -21,7 +21,7 @@ export default function ProjectHolder(props) {
         ) : (
           props.data.projects.map((project, index) => {
             return (
-              <Card cardImage={project.images[0].fileName} key={index}>
+              <Card cardImage={project.images[0]} key={index}>
                 <ProjectName cardData={project} />
               </Card>
             );

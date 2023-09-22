@@ -8,7 +8,7 @@ export default function ProjectImages({ images }) {
   return (
     <div className="project-images-holder">
       <div
-        style={{ backgroundImage: `url("${images[activeIndex].fileName}")` }}
+        style={{ backgroundImage: `url("${images[activeIndex]}")` }}
         className="info-project-images"
       />
       <div className="arrow-holder">
